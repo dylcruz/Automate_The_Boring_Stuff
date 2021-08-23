@@ -1,0 +1,1 @@
+This is a repository for pushing examples and projects for the book "Automate the Boring Stuff with Python".
