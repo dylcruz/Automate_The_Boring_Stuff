@@ -1,0 +1,8 @@
+1. {}
+2. {'foo': 42}
+3. You cannot splice a dictionary or look at a specific part (index)
+4. KeyError error
+5. None
+6. cat in spam checks for keys, not values
+7. spam.setDefault('color', 'black')
+8. pprint
