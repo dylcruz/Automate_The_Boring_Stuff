@@ -1,13 +1,6 @@
 #! python3
-# formFiller.py - Automatically fills in the form.
-
+# Automatically fills in the form at autbor.com/form
 import pyautogui, time
-
-# Set these to the correct coordinates for your particular computer.
-nameField = (648, 319)
-submitButton = (651, 817)
-submitButtonColor = (75, 141, 249)
-submitAnotherLink = (760, 224)
 
 formData = [{'name': 'Alice', 'fear': 'eavesdroppers', 'source': 'wand', 'robocop': 4, 'comments': 'Tell Bob I said hi.'},
             {'name': 'Bob', 'fear': 'bees', 'source': 'amulet', 'robocop': 4, 'comments': 'n/a'},
@@ -16,56 +9,54 @@ formData = [{'name': 'Alice', 'fear': 'eavesdroppers', 'source': 'wand', 'roboco
             ]
 
 pyautogui.PAUSE = 0.5
+print('Ensure that the browser window is active and the form is loaded!')
 
 for person in formData:
-    # Give the user a chance to kill the script.
+    # Give the user a chance to kill the script
     print('>>> 5 SECOND PAUSE TO LET USER PRESS CTRL-C <<<')
     time.sleep(5)
 
-    # Wait until the form page has loaded.
-    while not pyautogui.pixelMatchesColor(submitButton[0], submitButton[1], submitButtonColor):
-        time.sleep(0.5)
-
     print('Entering %s info...' % (person['name']))
-    pyautogui.click(nameField[0], nameField[1])
+    pyautogui.write(['\t', '\t'])
 
-    # Fill out the Name field.
-    pyautogui.typewrite(person['name'] + '\t')
+    # Fill out Name field
+    pyautogui.write(person['name'] + '\t')
 
-    # Fill out the Greatest Fear(s) field.
-    pyautogui.typewrite(person['fear'] + '\t')
+    # Fill out Greatest Fear(s) field
+    pyautogui.write(person['fear'] + '\t')
 
-    # Fill out the Source of Wizard Powers field.
+    # Fill out Source of Wizard Powers field
     if person['source'] == 'wand':
-        pyautogui.typewrite(['down', '\t'])
+        pyautogui.write(['down', '\n', '\t'], 0.5)
     elif person['source'] == 'amulet':
-        pyautogui.typewrite(['down', 'down', '\t'])
+        pyautogui.write(['down', 'down', '\n', '\t'], 0.5)
     elif person['source'] == 'crystal ball':
-        pyautogui.typewrite(['down', 'down', 'down', '\t'])
+        pyautogui.write(['down', 'down', 'down', '\n', '\t'], 0.5)
     elif person['source'] == 'money':
-        pyautogui.typewrite(['down', 'down', 'down', 'down', '\t'])
+        pyautogui.write(['down', 'down', 'down', 'down', '\n', '\t'], 0.5)
 
-    # Fill out the Robocop field.
+    # Fill out Robocop field
     if person['robocop'] == 1:
-        pyautogui.typewrite([' ', '\t'])
+        pyautogui.write([' ', '\t'], 0.5)
     elif person['robocop'] == 2:
-        pyautogui.typewrite(['right', '\t'])
+        pyautogui.write(['right', '\t'], 0.5)
     elif person['robocop'] == 3:
-        pyautogui.typewrite(['right', 'right', '\t'])
+        pyautogui.write(['right', 'right', '\t'], 0.5)
     elif person['robocop'] == 4:
-        pyautogui.typewrite(['right', 'right', 'right', '\t'])
+        pyautogui.write(['right', 'right', 'right', '\t'], 0.5)
     elif person['robocop'] == 5:
-        pyautogui.typewrite(['right', 'right', 'right', 'right', '\t'])
+        pyautogui.write(['right', 'right', 'right', 'right', '\t'], 0.5)
 
-    # Fill out the Additional comments field.
-    pyautogui.typewrite(person['comments'] + '\t')
+    # Fill out Additional comments
+    pyautogui.write(person['comments'] + '\t')
 
-    # Click Submit.
+    # "Click" Submit button by pressing Enter.
+    time.sleep(0.5) # Wait for the button to activate.
     pyautogui.press('enter')
 
     # Wait until form page has loaded.
-    print('Clicked Submit.')
+    print('Submitted form.')
     time.sleep(5)
 
-    # Click the Submit another response link.
-    pyautogui.click(submitAnotherLink[0], submitAnotherLink[1])
+    # "Click" the "Submit another response" link
+    pyautogui.write(['\t', '\n'])
