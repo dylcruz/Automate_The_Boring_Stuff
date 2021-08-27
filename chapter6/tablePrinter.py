@@ -8,7 +8,7 @@ def printTable(table):
     
     for x in range(len(table[0])):
         for y in range(len(table)):
-            print(table[y][x].rjust(colWidths[y]) + ' ', end='')
+            print(table[y][x].rjust(colWidths[y]), end=' ')
         print()
         
 
