@@ -1,0 +1,7 @@
+1. No
+2. Quicker and easier to type
+3. inputInt looks for a number with no decimal, float looks for decimal
+4. pyinputplus.inputInt(min = 0, max = 99)
+5. regexes that will allow or block the input
+6. Retrylimit exception
+7. returns 'hello'
