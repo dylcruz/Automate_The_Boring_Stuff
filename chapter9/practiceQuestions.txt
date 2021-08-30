@@ -1,0 +1,11 @@
+1. The current working directory
+2. The root folder, either C:\ or /
+3. C:\Users\Al
+4. Error
+5. Returns the current working directory, changes directory
+6. . = current, .. = parent
+7. dir name = C:\bacon\eggs, base name = spam.txt
+8. r(ead), w(rite), a(ppend)
+9. Exisint content is erased
+10. readlines will create a list with each item separated by a \n
+11. Dictionary
