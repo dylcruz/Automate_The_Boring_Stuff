@@ -13,6 +13,6 @@ for match in findReplacement.findall(sentence):
 print(sentence)
 
 newPath = f'{path}_complete.txt'
-newSentenceFile = open(f'{path}_complete.txt')
+newSentenceFile = open(f'{path}_complete.txt', 'w')
 newSentenceFile.write(sentence)
 newSentenceFile.close()
