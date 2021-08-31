@@ -1,0 +1,4 @@
+1. copy will copy a single file or directory, tree will also include folder contents
+2. shutil.move()
+3. send2trash send deleted file to recycle bin, shutil deletes the file permanently
+4. zipfile.ZipFile
