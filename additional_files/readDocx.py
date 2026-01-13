@@ -1,10 +1,8 @@
-#! python3
-
 import docx
 
-def getText(filename):
+def get_text(filename):
     doc = docx.Document(filename)
-    fullText = []
+    full_text = []
     for para in doc.paragraphs:
-        fullText.append(para.text)
-    return '\n\n'.join(fullText)
+        full_text.append(para.text)
+    return '\n\n'.join(full_text)

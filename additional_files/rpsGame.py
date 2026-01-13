@@ -7,7 +7,7 @@ wins = 0
 losses = 0
 ties = 0
 
-while True: # The main game loop.
+while True:  # The main game loop.
     print(wins, 'Wins,', losses, 'Losses,', ties, 'Ties')
     while True: # The player input loop.
         print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')

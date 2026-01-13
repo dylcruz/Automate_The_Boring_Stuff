@@ -1,5 +1,4 @@
 import random
-
 messages = ['It is certain',
     'It is decidedly so',
     'Yes definitely',
@@ -9,5 +8,6 @@ messages = ['It is certain',
     'My reply is no',
     'Outlook not so good',
     'Very doubtful']
-
+print('Ask a yes or no question:')
+input('>')
 print(messages[random.randint(0, len(messages) - 1)])
