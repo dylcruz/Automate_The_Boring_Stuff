@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 import shutil
 
-fileSearch = re.compile(r'^(.*)(\d\d\d)\.(.*)$')
+fileSearch = re.compile(r'^([a-zA-Z]*)(\d*)(\..*)$')
 
 filesFound = []
 
@@ -28,6 +28,12 @@ for fileName in filesFound:
         lastFileNum += 1
         continue
     else:
-        newFileNum = int(fileReg.group(2)) - 1
-        print(os.path.abspath(searchPath / fileName))
-    
+        if lastFileNum < 10:
+            newFileNum = f"00{lastFileNum}"
+        elif lastFileNum < 100:
+            newFileNum = f"0{lastFileNum}"
+        else:
+            newFileNum = lastFileNum
+        newFileName = f"{searchPath}/{fileReg.group(1)}{newFileNum}{fileReg.group(3)}"
+        shutil.move(f"{searchPath}/{fileName}", newFileName)
+        lastFileNum += 1
