@@ -1,0 +1,12 @@
+1. assert spam >= 10
+2. assert eggs.lower() != bacon.lower()
+3. assert True == False
+4. import logging, logging.basicConfig()
+5. import logging, logging.basicConfig(loggingFile='programLog.txt')
+6. Critical, Error, Warning, Info, Debug
+7. logging.disable(logging.CRITICAL)
+8. You can disable them all (or certain levels) wihout having to remove the lines
+9. Step over - skips debugging function call, step in - debugs function call, step out - skips rest of function call
+10. End of program or another breakpoint
+11. Where the debugger stops the programs execution
+12. Click on the line number
